@@ -48,7 +48,7 @@ const MyChat = ({ fetchAgain }) => {
 
     return (
         <Box
-            d={{ base: selectedChat ? "none" : "flex", md: "flex" }}
+            display={{ base: selectedChat ? "none" : "flex", md: "flex" }}
             flexDir="column"
             alignItems="center"
             p={3}
@@ -57,6 +57,7 @@ const MyChat = ({ fetchAgain }) => {
             borderRadius="lg"
             borderWidth="1px"
         >
+
             <Box
                 pb={3}
                 px={3}
@@ -67,6 +68,7 @@ const MyChat = ({ fetchAgain }) => {
                 justifyContent="space-between"
                 alignItems="center"
             >
+
                 My Chats
                 <GroupChatModal>
                     <Button
@@ -78,6 +80,7 @@ const MyChat = ({ fetchAgain }) => {
                     </Button>
                 </GroupChatModal>
             </Box>
+
             <Box
                 d="flex"
                 flexDir="column"
@@ -91,6 +94,7 @@ const MyChat = ({ fetchAgain }) => {
                 {chats ? (
                     <Stack overflowY="scroll">
                         {chats.map((chat) => (
+                            
                             <Box
                                 onClick={() => setSelectedChat(chat)}
                                 cursor="pointer"
@@ -101,6 +105,7 @@ const MyChat = ({ fetchAgain }) => {
                                 borderRadius="lg"
                                 key={chat._id}
                             >
+
                                 <Text>
                                     {!chat.isGroupChat
                                         ? getSender(loggedUser, chat.users)
